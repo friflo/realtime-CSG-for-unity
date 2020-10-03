@@ -467,6 +467,7 @@ namespace RealtimeCSG
 
 										var texGenFlags			= texGenFlagArray[t];
 										var material			= targetShape.TexGens[t].RenderMaterial;
+										var physicsMat			= targetShape.TexGens[t].PhysicsMaterial;
 										EditorGUI.BeginChangeCheck();
 										{
 											GUILayout.BeginHorizontal();
@@ -481,6 +482,7 @@ namespace RealtimeCSG
 														material = EditorGUILayout.ObjectField(material, typeof(Material), true) as Material;
 													}
 													EditorGUI.EndDisabledGroup();
+													physicsMat = EditorGUILayout.ObjectField(physicsMat, typeof(PhysicMaterial), true) as PhysicMaterial;
 
 													texGenFlags = EditModeCommonGUI.OnSurfaceFlagButtons(texGenFlags);
 												}
@@ -499,6 +501,7 @@ namespace RealtimeCSG
 											{
 												texGenFlagArray[t] = texGenFlags;
 												targetShape.TexGens[t].RenderMaterial = material;
+												targetShape.TexGens[t].PhysicsMaterial = physicsMat;
 											}
 										}
 										GUILayout.Space(4);
