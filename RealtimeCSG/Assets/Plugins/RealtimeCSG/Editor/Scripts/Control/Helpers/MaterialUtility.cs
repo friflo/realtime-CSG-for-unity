@@ -93,7 +93,7 @@ namespace RealtimeCSG
 			};
 			if (textureName != null)
 			{
-				string filename = "Assets/Plugins/RealtimeCSG/Editor/Resources/Textures/" + textureName + ".png";
+				string filename = CSG_Config.baseFolder + "Editor/Resources/Textures/" + textureName + ".png";
 				material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(filename);
 				if (!material.mainTexture)
 					Debug.LogWarning("Could not find internal texture: " + filename);
@@ -143,8 +143,8 @@ namespace RealtimeCSG
 		}
 
 		
-		const string DefaultMaterialPath = "Assets/Plugins/RealtimeCSG/Runtime/Materials/";
-		const string DefaultTexturePath = "Assets/Plugins/RealtimeCSG/Runtime/Textures/";
+		const string DefaultMaterialPath = CSG_Config.baseFolder + "Runtime/Materials/";
+		const string DefaultTexturePath = CSG_Config.baseFolder + "Runtime/Textures/";
 		
 		internal static void CreateRenderPipelineVersionOfDefaultMaterial(Material defaultMaterial, string materialName)
 		{
