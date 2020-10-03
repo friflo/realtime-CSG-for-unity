@@ -1,4 +1,8 @@
 {
+	"name": "realtime-CSG-for-unity",
+    "displayName": "Package Number 4",
+    "version": "1.558",
+    "unity": "2018.1",
     "dependencies": {
        
     }
