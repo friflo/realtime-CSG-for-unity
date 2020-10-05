@@ -477,11 +477,11 @@ namespace RealtimeCSG
 												GUILayout.Space(2);
 												GUILayout.BeginVertical();
 												{
-													EditorGUI.BeginDisabledGroup(texGenFlags != TexGenFlags.None);
+													//EditorGUI.BeginDisabledGroup(texGenFlags != TexGenFlags.None);
 													{
 														material = EditorGUILayout.ObjectField(material, typeof(Material), true) as Material;
 													}
-													EditorGUI.EndDisabledGroup();
+													//EditorGUI.EndDisabledGroup();
 													physicsMat = EditorGUILayout.ObjectField(physicsMat, typeof(PhysicMaterial), true) as PhysicMaterial;
 
 													texGenFlags = EditModeCommonGUI.OnSurfaceFlagButtons(texGenFlags);
